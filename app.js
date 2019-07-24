@@ -41,30 +41,30 @@ app.use(
 );
 
 //route protected with Keycloak
-app.get("/service/public", function(req, res) {
-    res.json({ message: "public" });
+app.get("/service/public", function (req, res) {
+    res.json({message: "public"});
 });
 
-app.get("/test", app.keycloak.protect("plop"), function(req, res) {
-    res.json({ message: "protected", session: req.session });
+app.get("/test", app.keycloak.protect("plop"), function (req, res) {
+    res.json({message: "protected", session: req.session});
 });
 
-app.get("/service/secured", app.keycloak.protect(), function(req, res) {
-    res.json({ message: "protected", session: req.session });
+app.get("/service/secured", app.keycloak.protect(), function (req, res) {
+    res.json({message: "protected", session: req.session});
 });
 
 app.get(
     "/channels",
-    app.keycloak.enforcer("read-channels", { response_mode: "token" }),
-    function(req, res) {
-        res.json({ message: "admin" });
+    app.keycloak.enforcer("channels:get"),
+    function (req, res) {
+        res.json({message: "admin"});
     }
 );
 
-app.use("*", function(req, res) {
+app.use("*", function (req, res) {
     res.send("Not found!");
 });
 
-app.listen(3000, function() {
+app.listen(3000, function () {
     console.log("Started at port 3000");
 });
