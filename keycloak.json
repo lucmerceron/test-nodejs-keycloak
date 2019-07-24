@@ -1,8 +1,13 @@
 {
   "realm": "procsea",
-  "bearer-only": true,
+  "bearer-only": false,
   "auth-server-url": "https://auth.fgribreau.com/auth",
   "ssl-required": "external",
   "resource": "notification-pwa",
-  "confidential-port": 0
+  "verify-token-audience": true,
+  "credentials": {
+    "secret": "254f5347-ce29-4709-bfc2-9e8d687ba635"
+  },
+  "confidential-port": 0,
+  "policy-enforcer": {}
 }
