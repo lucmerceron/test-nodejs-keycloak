@@ -2,9 +2,9 @@
   "realm": "procsea",
   "auth-server-url": "https://auth.fgribreau.com/auth",
   "ssl-required": "external",
-  "resource": "notification-pwa2",
+  "resource": "notification-api",
   "credentials": {
-    "secret": "6a3d8b79-e6c2-43e9-8ef4-20571268a204"
+    "secret": "a9de3064-1906-4edd-84f6-421011177b72"
   },
   "confidential-port": 0
 }
